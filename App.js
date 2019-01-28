@@ -60,9 +60,12 @@ export default class VoiceNative extends React.Component {
 
   render () {
     return (
-      <View>
+      <View style={{flex:1, justifyContent: "space-around"}}>
+      <Text style={styles.original}>
+            Talk in English and I will transcript what I understand
+        </Text>
         <Text style={styles.transcript}>
-            Transcript
+            Transcript:
         </Text>
         {this.state.results.map((result, index) => <Text style={styles.transcript}> {result}</Text>
         )}
@@ -78,7 +81,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#B0171F',
     marginBottom: 1,
-    top: '400%',
+  },
+  original: {
+    textAlign: 'center',
+    color: 'blue',
+    marginBottom: 1,
   },
 });
 AppRegistry.registerComponent('VoiceNative', () => VoiceNative);
